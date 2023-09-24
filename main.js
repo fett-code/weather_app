@@ -76,6 +76,7 @@ async function main(e){
         e.preventDefault();
     }
     const res =   await checkWeather(searchbox.value);
+    searchbox.value = searchbox.value.charAt(0).toUpperCase() + searchbox.value.slice(1)
     city.innerHTML=res.location.name;
     temp.innerHTML=Math.round(res.current.temp_c)+"°C";
     humidity.innerHTML=res.current.humidity+"%";
